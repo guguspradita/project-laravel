@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Models\Category;
 use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,22 @@ Route::get('/blog', [PostController::class, 'index']); // menampilkan data dari 
 
 // halaman single posts
 Route::get('/blog/{post:slug}', [PostController::class, 'show']);
+
+Route::get('/categories', function (){
+    return view('categories', [
+        'title' => 'Post Categories',
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('categories/{category:slug}', function (Category $category) {
+    $data = [
+        'title' => $category->nama,
+        'posts' => $category->posts,
+        'category' =>  $category->nama
+    ];
+    return view('category', $data);
+});
 
 // Route::get('/mahasiswa' , function () {
 //     $arrMhs = [
