@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
+    // mengirim dengan sebuah data, key dan value (key sebagai variabel di view)
     return View('about', [
         "title" => "About",
         "nama" => "Gugus Pradita",
