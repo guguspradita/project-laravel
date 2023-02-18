@@ -17,11 +17,12 @@ class PostController extends Controller
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post)
     {
         return view('post', [
             "title" => "Single Post",
-            "post" => Post::Find($slug)
+            // find digunakan untuk mencari id
+            "post" => $post
             // membawa key post ke view, beserta semua data didalam database model
         ]);
     }

@@ -33,7 +33,7 @@ Route::get('/about', function () {
 Route::get('/blog', [PostController::class, 'index']); // menampilkan data dari model Post
 
 // halaman single posts
-Route::get('/blog/{slug}', [PostController::class, 'show']);
+Route::get('/blog/{post:slug}', [PostController::class, 'show']);
 
 // Route::get('/mahasiswa' , function () {
 //     $arrMhs = [
