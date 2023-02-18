@@ -28,9 +28,9 @@ class Post
         return collect(self::$blog_post);
     }
 
-    public static function Find($slug)
-    {
-        $posts = static::All(); // mengakses method static all yang sudah menjadi collection
-        return $posts->firstWhere("slug", $slug); // mengembalikan nilai post
-    }
+    // public static function Find($slug)
+    // {
+    //     $posts = static::All(); // mengakses method static all yang sudah menjadi collection
+    //     return $posts->firstWhere("slug", $slug); // mengembalikan nilai post
+    // }
 }

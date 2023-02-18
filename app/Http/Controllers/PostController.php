@@ -13,6 +13,7 @@ class PostController extends Controller
         return View('posts', [
             "title" => "Blog",
             "posts" => Post::All(),
+            // membawa key post ke view, beserta fillabel didalam model
         ]);
     }
 
@@ -21,6 +22,7 @@ class PostController extends Controller
         return view('post', [
             "title" => "Single Post",
             "post" => Post::Find($slug)
+            // membawa key post ke view, beserta semua data didalam database model
         ]);
     }
 }
